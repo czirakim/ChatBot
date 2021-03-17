@@ -13,8 +13,8 @@ from wifi_clients import wifi_clients
 from hello import hello
 from temperature import temperature
 
-SLACK_EVENTS_TOKEN = "ae6682c4ac7b04a28942e70c92d8b32b"
-SLACK_TOKEN = "xoxb-1876744761968-1861414359765-ryluh7pLM3g0J79Beh58UTv5"
+SLACK_EVENTS_TOKEN = "abccsdfdffwrfwefwefwrfwrf"
+SLACK_TOKEN = "xoxb-aswdefefwfwfrefregfregregerg"
 
 # read inventory yml file
 fire = []
