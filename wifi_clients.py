@@ -8,7 +8,7 @@ class wifi_clients:
     self.channel = channel
 
   def _status(self):
-    api_url = 'http://192.168.88.8:9090/api/v1/query?query=mtxrWlRtabStrength{instance="192.168.88.1"}'
+    api_url = 'http://192.168.88.8:9090/api/v1/query?query=mtxrWlRtabStrength{instance="192.168.1.1"}'
     response = requests.get(api_url)
     x=json.loads(response.text)
     m=x['data']['result']
