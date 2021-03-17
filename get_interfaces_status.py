@@ -9,7 +9,7 @@ class interfaces_status:
     self.device = dev
 
   def _status(self,dev):
-    api_url = 'http://192.168.88.8:9090/api/v1/query?query=ifOperStatus{instance="%s"}' % (dev)
+    api_url = 'http://192.168.1.8:9090/api/v1/query?query=ifOperStatus{instance="%s"}' % (dev)
     response = requests.get(api_url)
     x=json.loads(response.text)
     m=x['data']['result']
