@@ -8,7 +8,7 @@ class down_interfaces:
     self.channel = channel
 
   def _status(self):
-    api_url = 'http://192.168.88.8:9090/api/v1/query?query=ifOperStatus==2'
+    api_url = 'http://192.168.1.8:9090/api/v1/query?query=ifOperStatus==2'
     response = requests.get(api_url)
     x=json.loads(response.text)
     m=x['data']['result']
