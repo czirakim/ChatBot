@@ -12,6 +12,7 @@ from down_interfaces import down_interfaces
 from wifi_clients import wifi_clients
 from hello import hello
 from temperature import temperature
+from myip import myip
 
 SLACK_EVENTS_TOKEN = "abcdfefgohynlhnnhnn"
 SLACK_TOKEN = "xoxb-89ass;dsalkd;fsd;s;lfs"
@@ -72,6 +73,11 @@ def temp_app(channel):
     temp_bot = temperature(channel)
     message = temp_bot.get_message_payload()
     slack_web_client.chat_postMessage(**message)
+    
+ def myip_app(channel):
+    myip_bot = myip(channel)
+    message = myip_bot.get_message_payload()
+    slack_web_client.chat_postMessage(**message)   
 
 # When a 'message' event is detected by the events adapter, forward that payload
 # to this function.
@@ -119,7 +125,11 @@ def message(payload):
     if "pitemp" in text.lower():
         channel_id = event.get("channel")
         return temp_app(channel_id)
-        
+ 
+    if "myip" in text.lower():
+        channel_id = event.get("channel")
+        return myip_app(channel_id)
+
 if __name__ == "__main__":
     # Create the logging object
     logger = logging.getLogger()
