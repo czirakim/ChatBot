@@ -6,7 +6,7 @@
 The scope of this project is to create a different type of interaction
 <br> with your network when you need basic information.  
 <br> The ChatBot is for the Slack app and it is written using Python and  Slack API's.
-<br> It is has 2 parts: the Slack app configuration and the Python scripts that live on your server.
+<br> It has 2 parts: the Slack app configuration and the Python scripts that live on your server.
 <br> Here on Github you will find the Python part of the project.
 
 ## Usage
