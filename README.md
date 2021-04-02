@@ -18,6 +18,7 @@ The project is made of multiple python scripts:
 
 
 <br> On my blog post you can find more info: 
+<br> https://latebits.com/2021/03/23/network-chatbot/
 
 
 ## Credits
