@@ -13,6 +13,7 @@ from wifi_clients import wifi_clients
 from hello import hello
 from temperature import temperature
 from myip import myip
+from whois import whois
 
 SLACK_EVENTS_TOKEN = "abcdfefgohynlhnnhnn"
 SLACK_TOKEN = "xoxb-89ass;dsalkd;fsd;s;lfs"
@@ -79,6 +80,11 @@ def temp_app(channel):
     message = myip_bot.get_message_payload()
     slack_web_client.chat_postMessage(**message)   
 
+def whois_app(channel,cmd_ip):
+    whois_bot = whois(channel,cmd_ip)
+    message = whois_bot.get_message_payload()
+    slack_web_client.chat_postMessage(**message)    
+    
 # When a 'message' event is detected by the events adapter, forward that payload
 # to this function.
 @slack_events_adapter.on("message")
@@ -130,6 +136,11 @@ def message(payload):
         channel_id = event.get("channel")
         return myip_app(channel_id)
 
+    if "whois" in text.lower():
+        cmd_list = text.split()
+        channel_id = event.get("channel")
+        return whois_app(channel_id,cmd_list[1])
+    
 if __name__ == "__main__":
     # Create the logging object
     logger = logging.getLogger()
